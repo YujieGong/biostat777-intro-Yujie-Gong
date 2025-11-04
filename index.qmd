@@ -4,6 +4,6 @@ title: "Welcome"
 
 # Hi, I’m Yujie
 
-I am a first year biostatistics master student at JHSPH interested in health policy and aging. I come from China, did my undergrads in Smith College, MA. In my free time, I love playing guitar, making clay arts and traveling! I also really love nature ：）
+I am a first year biostatistics master student at JHSPH interested in health policy, aging and clinical trial. I come from China, did my undergrads in Smith College, MA. In my free time, I love playing guitar, making clay arts and traveling! I also really love nature ：）
 
 ![](image/photo1.jpg){width="60%"}

@@ -4,13 +4,48 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site"
+    "text": "I’m a MS student in Biostatistics at Johns Hopkins University, where I focus on clinical and health data analysis. I’m passionate about using statistics to support evidence-based decision-making in biotech and pharmaceutical industries. My research interest focused on health policy, aging and clinical trial.\n\n\n\n\n\n\nM.S. in Biostatistics\nFocus: Statistical Methods, Health data analysis\n\n\n\nB.A. in Statistical & Data Science and Psychology\nDeveloped an interdisciplinary foundation combining data science, psychology, and human-centered research.\n\n\n\n\n\n\n\n\n\nResearch Assistant (CDC Influenza Forecasting)\n- Cleaned and analyzed CDC influenza surveillance data in R.\n- Built Shiny dashboards for real-time epidemic forecasts across U.S. regions.\n- Delivered a summary presentation to CDC collaborators.\n\n\n\nResearch Assistant (Education Analytics)\n- Processed pre-/post-course survey data (~40 students).\n- Performed regression and visualization to evaluate learning outcomes.\n- Conducted basic text analysis for open-ended feedback.\n\n\n\nResearch Assistant (Policy Diffusion Project)\n- Maintained a longitudinal policy dataset (n=1500+) on GitHub.\n- Applied IRT models in R to study diffusion of state policies.\n- Designed static and interactive visualizations with ggplot2 and plotly.\n\n\n\nResearch Intern (Precision Agriculture)\n- Processed 1.8 GB of satellite imagery using Python and ENVI.\n- Automated Excel reporting with Python, reducing 5+ hours/week of manual work.\n- Built classification algorithms to assess agricultural risk levels.\n\n\n\n\n\n\n\nLanguages: R, Python\nStatistical Methods: Regression (linear, logistic), GAMs, mixed models, survival analysis, IRT models\n\nVisualization: ggplot2, plotly, Shiny dashboards, Power BI\n\nVersion Control & Reporting: GitHub, Markdown, LaTeX\n\nDomain Expertise: Clinical trial data, epidemiology, survey analysis, geospatial imagery"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome",
     "section": "",
-    "text": "Hi, I’m Yujie\nI am a first year biostatistics master student at JHSPH interested in health policy and aging. I come from China, did my undergrads in Smith College, MA. In my free time, I love playing guitar, making clay arts and traveling! I also really love nature ：）"
+    "text": "Hi, I’m Yujie\nI am a first year biostatistics master student at JHSPH interested in health policy, aging and clinical trial. I come from China, did my undergrads in Smith College, MA. In my free time, I love playing guitar, making clay arts and traveling! I also really love nature ：）"
+  },
+  {
+    "objectID": "about.html#education-experience-timeline",
+    "href": "about.html#education-experience-timeline",
+    "title": "About",
+    "section": "",
+    "text": "M.S. in Biostatistics\nFocus: Clinical data analytics, statistical computing, and reproducible workflows.\n\n\n\nResearch Assistant (CDC Influenza Forecasting)\n- Cleaned and analyzed CDC influenza surveillance data in R.\n- Built Shiny dashboards for real-time epidemic forecasts across U.S. regions.\n- Delivered a summary presentation to CDC collaborators.\n\n\n\nResearch Assistant (Education Analytics)\n- Processed pre-/post-course survey data (~40 students).\n- Performed regression and visualization to evaluate learning outcomes.\n- Conducted basic text analysis for open-ended feedback.\n\n\n\nResearch Assistant (Policy Diffusion Project)\n- Maintained a longitudinal policy dataset (n=1500+) on GitHub.\n- Applied IRT models in R to study diffusion of state policies.\n- Designed static and interactive visualizations with ggplot2 and plotly.\n\n\n\nResearch Intern (Precision Agriculture)\n- Processed 1.8 GB of satellite imagery using Python and ENVI.\n- Automated Excel reporting with Python, reducing 5+ hours/week of manual work.\n- Built classification algorithms to assess agricultural risk levels.\n\n\n\nB.A. in Statistical & Data Science and Psychology\nDean’s List; Mu Sigma Rho National Statistics Honor Society.\nDeveloped an interdisciplinary understanding of data science, psychology, and research design."
+  },
+  {
+    "objectID": "about.html#technical-toolkit",
+    "href": "about.html#technical-toolkit",
+    "title": "About",
+    "section": "",
+    "text": "Languages: R, Python\nStatistical Methods: Regression (linear, logistic), GAMs, mixed models, survival analysis, IRT models\n\nVisualization: ggplot2, plotly, Shiny dashboards, Power BI\n\nVersion Control & Reporting: GitHub, Markdown, LaTeX\n\nDomain Expertise: Clinical trial data, epidemiology, survey analysis, geospatial imagery"
+  },
+  {
+    "objectID": "about.html#beyond-data",
+    "href": "about.html#beyond-data",
+    "title": "About",
+    "section": "",
+    "text": "Outside of analytics, I enjoy photography, art, and exploring how design and data visualization can create inclusive and accessible spaces."
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About",
+    "section": "",
+    "text": "M.S. in Biostatistics\nFocus: Statistical Methods, Health data analysis\n\n\n\nB.A. in Statistical & Data Science and Psychology\nDeveloped an interdisciplinary foundation combining data science, psychology, and human-centered research."
+  },
+  {
+    "objectID": "about.html#research-professional-experience",
+    "href": "about.html#research-professional-experience",
+    "title": "About",
+    "section": "",
+    "text": "Research Assistant (CDC Influenza Forecasting)\n- Cleaned and analyzed CDC influenza surveillance data in R.\n- Built Shiny dashboards for real-time epidemic forecasts across U.S. regions.\n- Delivered a summary presentation to CDC collaborators.\n\n\n\nResearch Assistant (Education Analytics)\n- Processed pre-/post-course survey data (~40 students).\n- Performed regression and visualization to evaluate learning outcomes.\n- Conducted basic text analysis for open-ended feedback.\n\n\n\nResearch Assistant (Policy Diffusion Project)\n- Maintained a longitudinal policy dataset (n=1500+) on GitHub.\n- Applied IRT models in R to study diffusion of state policies.\n- Designed static and interactive visualizations with ggplot2 and plotly.\n\n\n\nResearch Intern (Precision Agriculture)\n- Processed 1.8 GB of satellite imagery using Python and ENVI.\n- Automated Excel reporting with Python, reducing 5+ hours/week of manual work.\n- Built classification algorithms to assess agricultural risk levels."
   }
 ]

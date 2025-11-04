@@ -1,5 +1,83 @@
 ---
 title: "About"
+format: 
+  html:
+    toc: false
 ---
 
-About this site
+# Hi, I’m Yujie Gong
+
+I’m a MS student in **Biostatistics at Johns Hopkins University**, where I focus on **clinical and health data analysis**.  I’m passionate about using statistics to support **evidence-based decision-making** in biotech and pharmaceutical industries.  My research interest focused on health policy, aging and clinical trial. 
+
+---
+
+## 🎓 Education
+
+::: {.timeline-edu}
+
+#### 2025–Present — Johns Hopkins University  
+**M.S. in Biostatistics**  
+Focus: Statistical Methods, Health data analysis
+
+#### 2021–2025 — Smith College  
+**B.A. in Statistical & Data Science and Psychology**  
+Developed an interdisciplinary foundation combining data science, psychology, and human-centered research.
+
+:::
+
+---
+
+
+##  Research & Professional Experience
+
+::: {.timeline}
+
+#### 2024 — Reich Lab, University of Massachusetts Amherst  
+**Research Assistant (CDC Influenza Forecasting)**  
+- Cleaned and analyzed CDC influenza surveillance data in R.  
+- Built Shiny dashboards for real-time epidemic forecasts across U.S. regions.  
+- Delivered a summary presentation to CDC collaborators.
+
+#### 2024 — Disability Inclusion Analytics Lab, Smith College  
+**Research Assistant (Education Analytics)**  
+- Processed pre-/post-course survey data (~40 students).  
+- Performed regression and visualization to evaluate learning outcomes.  
+- Conducted basic text analysis for open-ended feedback.
+
+#### 2023–2025 — HSS State Politics Lab, Smith College  
+**Research Assistant (Policy Diffusion Project)**  
+- Maintained a longitudinal policy dataset (n=1500+) on GitHub.  
+- Applied IRT models in R to study diffusion of state policies.  
+- Designed static and interactive visualizations with ggplot2 and plotly.
+
+#### 2023 — Institute of Remote Sensing and Digital Earth, Chinese Academy of Sciences  
+**Research Intern (Precision Agriculture)**  
+- Processed 1.8 GB of satellite imagery using Python and ENVI.  
+- Automated Excel reporting with Python, reducing 5+ hours/week of manual work.  
+- Built classification algorithms to assess agricultural risk levels.
+
+:::
+
+---
+
+## Technical Toolkit
+
+- **Languages:** R, Python
+- **Statistical Methods:** Regression (linear, logistic), GAMs, mixed models, survival analysis, IRT models  
+- **Visualization:** ggplot2, plotly, Shiny dashboards, Power BI  
+- **Version Control & Reporting:** GitHub, Markdown, LaTeX  
+- **Domain Expertise:** Clinical trial data, epidemiology, survey analysis, geospatial imagery
+
+---
+
+<style>
+.timeline {
+  border-left: 3px solid #ccc;
+  margin-left: 1.5em;
+  padding-left: 1em;
+}
+.timeline h4 {
+  margin-top: 1em;
+  color: #0077b6;
+}
+</style>
