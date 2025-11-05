@@ -1,0 +1,190 @@
+---
+title: "Example Analysis: Sleep, Lifestyle, and Health"
+author: "Yujie Gong"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: false
+execute:
+  echo: true 
+  warning: false
+  message: false
+  bibliography: reference.bib
+---
+
+![Sleep time](image/sleep_image.jpg){width=80%}
+
+
+#  Research Question
+
+> How do lifestyle factors such as **BMI, stress and occupation** affect individuals’ **sleep duration** and **sleep quality**?
+
+::: {.callout-note}
+#### Why this matters
+Understanding how lifestyle factors affect sleep can help **public health professionals** identify actionable interventions for improving population well-being.
+:::
+
+# Intended Audience
+
+> This analysis is aimed at public health researchers and students interested in exploring relationships between behavioral factors and sleep health. It can also serve as a resource for health educators designing wellness interventions.
+
+# Data Source
+
+The dataset was obtained from Kaggle’s public health repository[@kaggle_sleep].  
+
+Prior research found that lifestyle behaviors such as physical activity, diet, and stress are shaped by broader social and structural factors, which in turn influence individual health outcomes like sleep quality and duration by embedding social inequalities into daily health practices. [@monk2003relationship].  
+
+
+Another research found that lifestyle behaviors, including physical activity, fast-food consumption, screen time, and daily routine regularity, significantly predict sleep health across the lifespan, showing that healthier, more active, and structured lifestyles are consistently associated with better sleep quality and duration  [@chattu2019sleep]. 
+
+**Data Dictionary**
+
+| Variable | Description |
+|-----------|--------------|
+| `Gender` | Male / Female |
+| `Age` | Age of the person |
+| `Occupation` | Type of job |
+| `Sleep Duration` | Average sleep hours per night |
+| `Quality of Sleep` | Self-reported sleep quality (1–10) |
+| `Physical Activity Level` | Daily activity minutes |
+| `Stress Level` | Self-reported stress level (1–10) |
+| `BMI Category` | Underweight, Normal, Overweight, Obese |
+| `Blood Pressure` | mmHg reading |
+| `Heart Rate` | Average bpm |
+| `Daily Steps` | Average steps per day |
+
+---
+
+# Data Wrangling
+
+```{r}
+library(tidyverse)
+
+# Load data
+sleep <- read_csv("data/Sleep_health_and_lifestyle_dataset.csv")
+
+# Clean data
+sleep_clean <- sleep |>
+  rename_all(make.names) |>                       # Standardize column names
+  filter(
+    !is.na(Sleep.Duration),                       # Keep only valid sleep durations
+    !is.na(BMI.Category),                         # Remove rows with missing BMI category
+    BMI.Category != ""                            # Also remove empty strings if any
+  ) |>
+  mutate(
+    Gender = as.factor(Gender),
+    BMI.Category = factor(
+      BMI.Category,
+      levels = c("Underweight", "Normal", "Overweight", "Obese")
+    )
+  ) |>
+  group_by(Gender, BMI.Category) |>                # Group by Gender & BMI
+  summarise(
+    avg_sleep = mean(Sleep.Duration, na.rm = TRUE),
+    avg_stress = mean(Stress.Level, na.rm = TRUE)
+  ) |>
+  ungroup() |>
+  arrange(desc(avg_sleep))                         # Sort by avg_sleep
+
+# View cleaned summary
+head(sleep_clean)
+```
+
+::: {.callout-tip}
+#### Data Cleaning Tip
+Always check for missing values (`NA`) and inconsistent data types before summarizing.  
+In this analysis, we removed `NA` values for `Sleep.Duration` to ensure valid averages.
+:::
+---
+# Plots
+
+```{r}
+# Relationship between stress and sleep duration
+plot1 <- read_csv("data/Sleep_health_and_lifestyle_dataset.csv") |> 
+  rename_all(make.names)|>
+  ggplot(aes(x = Stress.Level, y = Sleep.Duration, color = Gender)) +
+  geom_point(alpha = 0.7) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(
+    title = "Relationship between Stress and Sleep Duration",
+    subtitle = "Higher Stress is Linked to Shorter Sleep Duration",
+    x = "Stress Level (1–10)",
+    y = "Sleep Duration (hours)",
+    caption = "Plot created by Yujie Gong"
+  )
+plot1
+```
+
+::: {.callout-note .aside}
+#### Interpretation
+This plot shows a **negative relationship between stress level and sleep duration**, indicating that individuals experiencing higher stress tend to sleep fewer hours.  
+These findings align with Dzierzewski et al. (2021), who found that **daily stress and irregular lifestyle patterns** significantly reduce sleep health across all age groups, emphasizing the role of stress management in promoting better sleep.
+:::
+
+```{r}
+#bmi gender and sleep duration
+plot2 <- read_csv("data/Sleep_health_and_lifestyle_dataset.csv") |> 
+  rename_all(make.names)|>
+  ggplot(aes(x = BMI.Category, y = Sleep.Duration, fill = BMI.Category)) +
+  geom_boxplot() +
+  facet_wrap(~ Gender) +
+  labs(
+    title = "Sleep Duration Distribution by BMI Category and Gender",
+    subtitle = "BMI and Sleep Duration are negatively correlated and females overall sleep \n
+    slightly longer and with more consistency than males across BMI groups",
+    x = "BMI Category", 
+    y = "Sleep Duration (hours)",
+    caption = "Plot created by Yujie Gong"
+  )
+plot2
+```
+
+```{r}
+plot3 <- read_csv("data/Sleep_health_and_lifestyle_dataset.csv") |> 
+  rename_all(make.names) |>
+  group_by(Occupation) |>
+  summarise(mean_sleep = mean(Sleep.Duration, na.rm = TRUE)) |>
+  arrange(desc(mean_sleep)) |>
+  ggplot(aes(x = reorder(Occupation, mean_sleep), y = mean_sleep, fill = Occupation)) +
+  geom_col() +
+  coord_flip() +
+  labs(
+    title = "Average Sleep Duration by Occupation",
+    subtitle = "The bar chart shows that engineers, lawyers, and accountants report the longest\n average sleep durations, while sales and science-related occupations tend to \nhave shorter sleep hours",
+    x = "Occupation",
+    y = "Average Sleep Duration (hours)",
+    caption = "Plot created by Yujie Gong"
+  ) +
+  theme(legend.position = "none")
+
+plot3
+```
+
+This analysis examined how stress, BMI, and occupation relate to sleep health using the Sleep Health and Lifestyle Dataset. The results show that individuals with higher stress levels tend to have shorter sleep durations, while those with healthier BMI values generally experience longer and more consistent sleep. Gender differences were observed, with females reporting slightly longer and steadier sleep patterns across BMI categories compared to males. Occupation also played a role—professionals such as engineers, lawyers, and accountants reported longer average sleep hours than sales and science-related workers, suggesting that job type and workload may influence rest patterns. Overall, the findings support prior research indicating that stress management, healthy body composition, and work-life balance are important for promoting good sleep health.
+
+Functions Used
+
+From dplyr:
+filter()
+mutate()
+group_by()
+summarise()
+arrange()
+ungroup()
+
+From tidyr:
+rename_all()
+
+From ggplot2:
+ggplot()
+aes()
+geom_point()
+geom_smooth()
+geom_boxplot()
+geom_col()
+facet_wrap()
+labs()
+coord_flip()
+theme()
+
