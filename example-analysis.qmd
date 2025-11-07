@@ -7,10 +7,10 @@ format:
     toc-depth: 2
     code-fold: false
 execute:
-  echo: true 
+  echo: true
   warning: false
   message: false
-  bibliography: reference.bib
+bibliography: reference.bib
 ---
 
 ![Sleep time](image/sleep_image.jpg){width=80%}
